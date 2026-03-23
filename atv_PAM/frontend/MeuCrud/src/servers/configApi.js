@@ -1,2 +1,2 @@
-//URL gerada pelo localtunnel
-export const API_URL = "https://giant-pillows-brake.loca.lt";
+//URL gerada pelo CloudFlare Tunnel
+export const API_URL = "https://fans-rush-film-driven.trycloudflare.com";

@@ -1,10 +1,17 @@
 {
-    "people": [
-        {
-            "id": 1,
-            "firstname": "Rafael",
-            "lastname": "Cruz",
-            "email": "rafael@email.com.br"
-        }
-    ]
+  "people": [
+    {
+      "firstName": "Rafael",
+      "lastName": "Cruz",
+      "email": "rafael@email.com.br",
+      "id": "1"
+    },
+    {
+      "firstName": "Murilo",
+      "lastName": "Zanetti",
+      "email": "muriloz@gmail.com",
+      "id": "AWBKwglj8_c"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
