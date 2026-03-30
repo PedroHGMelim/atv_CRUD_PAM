@@ -31,10 +31,20 @@ export default StyleSheet.create({
     fontSize: 10
   },
 
+  phone: {
+    fontSize: 12
+  },
+
   button: {
     padding: 10,
     backgroundColor: "#4CAF50",
     borderRadius: 5
-  }
+  },
   
+  search: {
+    padding: 5,
+    marginBottom: 10,
+    backgroundColor: "#f5f5f5",
+    border: "2px solid black"
+  }
 })

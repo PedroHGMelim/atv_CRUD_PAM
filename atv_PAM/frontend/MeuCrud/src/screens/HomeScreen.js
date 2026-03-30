@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, Button } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { View, Text, FlatList, Button, TextInput } from "react-native";
 
 import styles from "../styles/styles";
 
@@ -9,6 +9,8 @@ export default function HomeScreen({ navigation }) {
 
     //estado da lista
     const [people, setPeople] = useState([]);
+    const [search, setSearch] = useState([]);
+    const [all, setAll] = useState([]);
 
     //função para carregar dados
     async function loadPeople(){
@@ -16,10 +18,28 @@ export default function HomeScreen({ navigation }) {
         const data = await getPeople();
 
         setPeople(data);
+        setAll(data);
     }
+
+    const searching = (text) => {
+        setSearch(text);
+
+        if (text.trim() === "") {
+        setPeople(all);
+        return;
+        }
+
+        const filter = all.filter((item) => {
+        const fullName = `${item.firstName} ${item.lastName}`.toLowerCase();
+        return fullName.includes(text.toLowerCase());
+        });
+
+        setPeople(filter);
+    };
 
     //executa ao abrir tela
     useEffect(()=>{
+        setSearch("");
         loadPeople();
     },[]);
 
@@ -28,9 +48,11 @@ export default function HomeScreen({ navigation }) {
 
             <Text style={styles.title}>Pessoas</Text>
 
-            <Button
-                title="Adicionar Pessoa"
-                onPress={()=> navigation.navigate("AddEdit")}
+            <TextInput
+                placeholder="Search"
+                style={styles.search}
+                value={search}
+                onChangeText={searching}
             />
 
             <FlatList
@@ -44,6 +66,11 @@ export default function HomeScreen({ navigation }) {
                         refresh={loadPeople}
                     />
                 )}
+            />
+
+            <Button
+                title="Adicionar Pessoa"
+                onPress={()=> navigation.navigate("AddEdit")}
             />
 
         </View>
@@ -66,12 +93,16 @@ function CardPersonal({item, navigation, refresh}) {
                     {item.email}
                 </Text>
 
+                <Text style={styles.phone}>
+                    {item.phone}
+                </Text>
+
             </View>
 
             <View>
 
                 <Button
-                    title="Editor"
+                    title="Editar"
                     onPress={()=> navigation.navigate("AddEdit",{person:item})}
                 />
 

@@ -4,13 +4,29 @@
       "firstName": "Rafael",
       "lastName": "Cruz",
       "email": "rafael@email.com.br",
+      "phone": "19 998877665",
       "id": "1"
     },
     {
       "firstName": "Murilo",
       "lastName": "Zanetti",
       "email": "muriloz@gmail.com",
+      "phone": "19 912857346",
       "id": "AWBKwglj8_c"
+    },
+    {
+      "firstName": "Matheus",
+      "lastName": "Buffon",
+      "email": "buffon@gmail.com",
+      "phone": "19 544332211",
+      "id": "vmZTztu3nu4"
+    },
+    {
+      "firstName": "Pedro",
+      "lastName": "Melim",
+      "email": "pedro@gmail.com",
+      "phone": "19 987654321",
+      "id": "JpfUB3mOjLs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
