@@ -1,5 +1,5 @@
 ﻿# React Native CRUD de Usuários
- ##Descrição do projeto
+ ## Descrição do projeto
 
 Este projeto consiste em um aplicativo mobile desenvolvido com **React Native** e **Expo** para gerenciamento de usuários. A aplicação permite realizar operações básicas de um CRUD (Create, Read, Update, Delete), possibilitando listar usuários, adicionar novos registros, editar informações existentes e excluir usuários.
 
