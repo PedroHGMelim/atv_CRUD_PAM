@@ -41,7 +41,7 @@ npm install -g json-server
 ```
 Inicie o servidor que gerencia o arquivo db.json pelo cmd:
 ```bash
-npx json-server --watch db.json --port 3000
+npx json-server --watch database.json --port 3000
 ```
 ### 3. Exposição da API (Tunnel)
 Como o app roda no celular, é preciso expor a porta 3000 para a internet, por isso usaremos o Cloudflare Tunnel para isso:
@@ -49,26 +49,30 @@ Crie outro cmd pelo terminal e baixe o cloudflared globalmente:
 ```bash
 npm install -g cloudflared
 ```
-Execute esse comando para disponibilizar o nosso backend (porta 3000)para a internet:
+Execute esse comando para disponibilizar o nosso backend (porta 3000) para a internet:
 ```bash
-npx lt --port 3000 --host https://localtunnel.me
+npx cloudflared tunnel --url http://localhost:3000
 ```
-Nota: Copie a URL https gerada pelo LocalTunnel (ex: https://tidy-wings-search.loca.lt) e adicione a URL entre as aspas (" ") no arquivo configApi.js:
+Nota: Copie a URL https gerada pelo Cloudflare Tunnel (ex: https://random.trycloudflare.com/users) e adicione a URL entre as aspas (" ") no arquivo configApi.js:
 ```bash
-CrudApp/servers/configApi.js
+atv_PAM/frontend/MeuCrud/src/servers/configApi.js
 ```
 
 ### 4. Iniciar o Aplicativo
-Agora, execute o Expo limpando o cache e forçando o modo túnel:
+Agora, crie outro cmd pelo terminal e execute o Expo:
 
 ```bash
-npx expo start -c --tunnel
+cd atv_CRUD_PAM
+cd atv_PAM
+cd frontend
+cd MeuCrud
+npx expo start
 ```
-Escaneie o QR Code usando o app Expo Go no seu celular.
+Escaneie o QR Code usando o app Expo Go no seu celular caso não funcione verifique sua versão do expo go no celular ou use pelo web apertando w no cmd que você utilizou para executar o expo, caso preferir uma interface de celular baixe a extensão MobileView no Visual Studio Code, clique no ícone de celular que aparecer na sua barra lateral, escolha um modelo e copie o link da web no prompt que aparece na parte de cima da sua tela.
 
 ### 5. Vídeo Demonstração
 Se desejar apenas ver o vídeo demonstração, segue o link do Youtube:
 
 ```bash
-
+Em produção
 ```
