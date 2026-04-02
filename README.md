@@ -74,5 +74,5 @@ Escaneie o QR Code usando o app Expo Go no seu celular caso não funcione verifi
 Se desejar apenas ver o vídeo demonstração, segue o link do Youtube:
 
 ```bash
-Em produção
+https://youtu.be/PUcGt0BfgK8
 ```
